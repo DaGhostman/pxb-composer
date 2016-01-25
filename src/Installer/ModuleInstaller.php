@@ -59,7 +59,7 @@ class ModuleInstaller extends LibraryInstaller implements InstallerInterface
     {
         $extra = $package->getExtra();
 
-        if (!array_key_exists('pxb-config', $extra)) {
+        if (array_key_exists('pxb-config', $extra)) {
             $this->loadModule($package, $extra['pxb-config']);
         }
 
