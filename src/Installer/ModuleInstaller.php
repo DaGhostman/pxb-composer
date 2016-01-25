@@ -34,7 +34,7 @@ class ModuleInstaller extends LibraryInstaller implements InstallerInterface
      */
     protected $config;
 
-    public function __construct(Composer $composer, IOInterface $io, $type = 'library', Filesystem $filesystem)
+    public function __construct(Composer $composer, IOInterface $io, $type = 'library', Filesystem $filesystem = null)
     {
         $this->composer = $composer;
         $this->config = $composer->getConfig();
