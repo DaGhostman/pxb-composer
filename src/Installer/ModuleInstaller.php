@@ -60,10 +60,7 @@ class ModuleInstaller extends LibraryInstaller implements InstallerInterface
         $extra = $package->getExtra();
 
         if (!array_key_exists('pxb-config', $extra)) {
-            $this->io->writeError(sprintf(
-                '<warning>Unable to find "pxb-config" of modules %s (check module documentation to load)</warning>',
-                $package->getPrettyName()
-            ));
+            $this->loadModule($package, $extra['pxb-config']);
         }
 
         parent::install($repo, $package);
@@ -83,13 +80,6 @@ class ModuleInstaller extends LibraryInstaller implements InstallerInterface
         $this->io->write('<info> ** Checking for changes in configuration file entry</info>');
         $oldExtra = $initial->getExtra();
         $targetExtra = $target->getExtra();
-
-        if (!array_key_exists('pxb-config', $targetExtra)) {
-            $this->io->writeError(sprintf(
-                '<warning>Unable to find "pxb-config" of the %s (check module documentation to load)</warning>',
-                $target->getPrettyName()
-            ));
-        }
 
         parent::update($repo, $initial, $target);
 
