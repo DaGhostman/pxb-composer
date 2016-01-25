@@ -1,0 +1,27 @@
+{
+    "name": "ddimitrov/pxb-composer",
+    "description": "PXB module installer",
+    "type": "composer-plugin",
+    "extra": {
+        "class": "\\PXB\\Installer\\Plugin"
+    },
+    "require": {
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "~1.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "PXB\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimitar Dimitrov",
+            "email": "daghostman.dd@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
